@@ -1,5 +1,5 @@
-# Industrial IoT Energy Monitoring System
-## Complete Data Analysis & Forecasting Project
+
+## Data Analysis & Forecasting Project
 
 ---
 
