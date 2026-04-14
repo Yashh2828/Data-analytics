@@ -1,0 +1,173 @@
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║           POWER BI DASHBOARD CREATION INSTRUCTIONS                             ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📊 IMPORTING DATA INTO POWER BI
+================================
+
+1. OPEN POWER BI DESKTOP
+   • Launch Power BI Desktop
+   • Click "Get Data" → "Text/CSV"
+
+2. IMPORT DATA SOURCES
+   
+   DATA SOURCES TO IMPORT (from 'reports' folder):
+   ✓ PowerBI_Summary_KPIs.csv
+   ✓ PowerBI_Device_Analysis.csv
+   ✓ PowerBI_TimeSeries.csv
+   ✓ PowerBI_Forecasts.csv
+   ✓ PowerBI_Actual_vs_Predicted.csv
+   ✓ PowerBI_Hourly_Patterns.csv
+   ✓ PowerBI_Anomalies.csv (if available)
+
+3. CREATE RELATIONSHIPS
+   
+   Connect tables using common columns:
+   • TimeSeries → Device_Analysis: Device column
+   • Forecasts → Summary_KPIs: Create measures from KPIs
+   • Actual_vs_Predicted → TimeSeries: Device & Timestamp
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 PAGE 1: OVERVIEW
+====================
+
+VISUALIZATIONS:
+├─ KPI Card: Total Consumption (KWh)
+├─ KPI Card: Average Consumption
+├─ KPI Card: Peak Consumption
+├─ Line Chart: Daily Trend (Date vs Total KWh)
+├─ Bar Chart: Consumption by Hour
+└─ Matrix: Summary Statistics
+
+FILTERS:
+• Date Range Slicer
+• Device Filter
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 PAGE 2: DEVICE ANALYSIS
+===========================
+
+VISUALIZATIONS:
+├─ Pie Chart: Energy % by Device
+├─ Bar Chart: Total Consumption by Device
+├─ Box Plot: Consumption Distribution
+├─ Table: Device Statistics (Total, Avg, Max, Min)
+└─ Clustered Bar: Hourly Pattern by Device
+
+FILTERS:
+• Device Slicer
+• Location Filter
+
+KEY METRICS:
+• Which device consumes most?
+• Device contribution percentage
+• Peak consumption device
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 PAGE 3: FORECASTING & ANOMALY DETECTION
+============================================
+
+VISUALIZATIONS:
+├─ Line Chart: Actual vs Predicted (24-hour sample)
+├─ Line Chart: Next 24h Forecast by Device
+├─ Scatter Plot: Anomaly Visualization (Red points = Anomalies)
+├─ Table: Top Anomalies Detected
+└─ Gauge: Forecast Accuracy (R² Score)
+
+FILTERS:
+• Device Slicer
+• Time Period Filter
+
+KEY METRICS:
+• Number of anomalies detected
+• Anomaly severity (Z-score)
+• Forecast accuracy (R² value)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 DESIGN RECOMMENDATIONS
+==========================
+
+COLOR SCHEME:
+• Primary: #1f77b4 (Blue) - Normal consumption
+• Alert: #d62728 (Red) - Anomalies
+• Success: #2ca02c (Green) - Optimal
+• Neutral: #7f7f7f (Gray) - Background
+
+FONTS:
+• Headers: Segoe UI, Bold, 14-16pt
+• Labels: Segoe UI, Regular, 11-12pt
+
+LAYOUT:
+• Use white background
+• Add company logo in header
+• Include refresh timestamp
+• Add drill-through filters
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 CUSTOM MEASURES (DAX FORMULAS)
+=================================
+
+Total Consumption:
+    Total Consumption = SUM(TimeSeries[Energy_Consumption_KWh])
+
+Average Consumption:
+    Avg Consumption = AVERAGE(TimeSeries[Energy_Consumption_KWh])
+
+Peak Consumption:
+    Peak Consumption = MAX(TimeSeries[Energy_Consumption_KWh])
+
+Consumption % by Device:
+    Device % = DIVIDE([Total Consumption], CALCULATE([Total Consumption], ALL(Device_Analysis)))
+
+Anomaly Count:
+    Anomaly Count = COUNTA(Anomalies[Z_Score])
+
+Forecast Accuracy:
+    Forecast Accuracy = CALCULATE(AVERAGE(Actual_vs_Predicted[R2_Score]))
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💾 PUBLISHING & SHARING
+=======================
+
+1. Publish to Power BI Service
+   File → Publish → Select Workspace
+
+2. Set Up Automatic Refresh
+   • Dataset Settings → Refresh Schedule
+   • Set frequency (daily recommended)
+
+3. Share Dashboard
+   • Share → Enter email addresses
+   • Set permission levels
+
+4. Create Mobile Layout
+   • View → Mobile Layout
+   • Optimize for phone/tablet
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ VERIFICATION CHECKLIST
+=========================
+
+□ All data sources imported correctly
+□ Relationships established
+□ Date formats consistent
+□ All visualizations showing data
+□ Filters working properly
+□ Navigation between pages smooth
+□ KPI cards displaying correct values
+□ Anomalies highlighted clearly
+□ Forecast visualizations complete
+□ Performance optimized (no slow queries)
+□ Published and shared with stakeholders
+
+════════════════════════════════════════════════════════════════════════════════
+        For questions or issues, refer to the analysis_summary.txt report
+════════════════════════════════════════════════════════════════════════════════

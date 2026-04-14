@@ -1,0 +1,45 @@
+================================================================================
+INDUSTRIAL IOT ENERGY MONITORING - ANALYSIS SUMMARY REPORT
+================================================================================
+
+1. ENERGY CONSUMPTION SUMMARY
+--------------------------------------------------------------------------------
+   Total Consumption: 315,091.27 KWh
+   Average Consumption: 109.41 KWh
+   Peak Consumption: 540.67 KWh
+   Period: 2024-01-01 00:00:00 to 2024-01-30 23:00:00
+
+2. DEVICE-WISE CONSUMPTION
+--------------------------------------------------------------------------------
+   AC_Back: 93,253.50 KWh (29.6%) | Avg: 129.52 KWh
+   AC_Front: 101,686.73 KWh (32.3%) | Avg: 141.23 KWh
+   Office: 63,242.75 KWh (20.1%) | Avg: 87.84 KWh
+   Library: 56,908.29 KWh (18.1%) | Avg: 79.04 KWh
+
+3. PEAK CONSUMPTION ANALYSIS
+--------------------------------------------------------------------------------
+   Peak Hour: 12:00 - 13:00
+   Peak Consumption: 179.23 KWh
+
+4. ANOMALY DETECTION
+--------------------------------------------------------------------------------
+   Total Anomalies Found: 5
+   AC_Front: 5 anomalies
+
+5. FORECAST MODEL PERFORMANCE
+--------------------------------------------------------------------------------
+   AC_Back: R² Score = 0.1350
+   AC_Front: R² Score = 0.1121
+   Office: R² Score = 0.0304
+   Library: R² Score = 0.1152
+
+6. KEY INSIGHTS & RECOMMENDATIONS
+--------------------------------------------------------------------------------
+   • Highest Energy Consumer: AC_Front
+   • AC Units consume significantly more energy during peak hours
+   • Recommendation: Optimize AC temperature settings or schedules
+   • 5 anomalies detected - investigate equipment malfunction
+   • Recommendation: Check for faulty sensors or equipment degradation
+   • Implement time-based scheduling to reduce peak-hour consumption
+   • Monitor forecast accuracy and adjust models as needed
+================================================================================
