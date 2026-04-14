@@ -294,61 +294,7 @@ Power BI              - Dashboard & reporting
 
 ---
 
-## ❓ FREQUENTLY ASKED QUESTIONS
 
-**Q: Why are forecast R² scores low?**
-A: Energy depends on factors beyond time (weather, occupancy, equipment). Current model is baseline. Scores will improve with external data.
-
-**Q: What do anomalies mean?**
-A: Z-score > 3 = 99.7% statistical significance. These 5 are genuine issues requiring attention.
-
-**Q: How often update dashboard?**
-A: Hourly for real-time monitoring. Daily minimum for trend analysis.
-
-**Q: Can use for other facilities?**
-A: Yes. Scripts work with any device data (maintain Timestamp + Energy_Consumption format).
-
-**Q: What's included in the package?**
-A: 3 Python scripts, 13 output files, Power BI templates, full documentation.
-
----
-
-## 📞 SUPPORT
-
-**Files to Review**:
-- `processed_data/analysis_summary.txt` - Executive report
-- `reports/POWERBI_INSTRUCTIONS.txt` - Dashboard guide
-- `PROJECT_COMPLETION_SUMMARY.md` - Detailed technical report
-- `QUICK_START.md` - Quick reference
-
-**Next Steps**:
-1. ✅ Review analysis summary
-2. ✅ Create Power BI dashboard
-3. ✅ Investigate AC_Front anomalies
-4. ✅ Implement recommendations
-5. ✅ Schedule monthly reviews
-
----
-
-## ✅ VERIFICATION CHECKLIST
-
-```
-✓ Data Collection        - 4 devices, 2,880 records
-✓ Data Cleaning          - 100% completeness
-✓ Data Integration       - Unified table created
-✓ Analysis Complete      - All metrics calculated
-✓ Forecasting Done       - 24-hour predictions
-✓ Anomalies Found        - 5 issues identified
-✓ Power BI Ready         - 7 datasets prepared
-✓ Reports Generated      - 5 analysis files
-✓ Dashboard Templates    - 3 pages designed
-✓ Documentation          - Complete & professional
-```
-
----
-
-**Status**: ✅ COMPLETE & PRODUCTION READY
-**Quality**: ✅ VERIFIED  
 **Updated**: April 14, 2026
 
 For questions or issues, refer to detailed documentation files in project directory.
